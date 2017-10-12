@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead
+k# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20171010212409) do
     t.boolean "is_mentor"
     t.integer "phone"
     t.string "password_digest"
-    t.string "remember_digest"
+    # t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
