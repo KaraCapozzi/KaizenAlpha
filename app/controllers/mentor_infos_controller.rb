@@ -1,7 +1,10 @@
 class MentorInfosController < ApplicationController
+  def index
+    @mentor_infos = MentorInfo.all
+  end
 
   def show
-
+   @mentor_info
   end
 
   def new
@@ -15,7 +18,7 @@ class MentorInfosController < ApplicationController
     if mentor_info = nil
       user.create_mentor_info(summary: params[:mentor_info][:summary], location: params[:mentor_info][:location])
     else
-      mento_info can edit their profile 
+      mento_info can edit their profile
     end
     subcat_add = Subcategory.where(id: params[:subcategories].keys)
     subcat_add.each do |subcat|
