@@ -1,4 +1,4 @@
-<div class="">
+<div>
   <%= form_for(@mentor_info, url: addmentor_path) do |f| %>
     <%= f.label :summary %>
     <%= f.text_area :summary %>
@@ -6,8 +6,17 @@
     <%= f.label :location %>
     <%= f.text_field :location %>
 
+
+
+    <% @categories.each do |category| %>
+      <h3><%= category.name %></h3>
+      <% category.subcategories.each do |subcat| %>
+        <%= check_box_tag("subcategories[#{subcat.id}]", subcat.name) %>
+        <%= label_tag("subcategories[#{subcat.id}]", subcat.name)%>
+      <% end %>
+    <% end %>
+
     <%= f.submit "Submit Mentor Info" %>
 
   <% end %>
-
 </div>

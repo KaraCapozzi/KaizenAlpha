@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       if user.is_mentor
-        redirect_to newmentor_path
+        redirect_to new_mentor_path
       else
         redirect_to user
       end
