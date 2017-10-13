@@ -1,5 +1,13 @@
 <div class="">
-  <% @subcategories.each do |subcat| %>
-    <input type="checkbox" value="<%= subcat.id %>"/> <%= subcat.name %>
+  <%= form_for(@mentor_info, url: addmentor_path) do |f| %>
+    <%= f.label :summary %>
+    <%= f.text_area :summary %>
+
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+
+    <%= f.submit "Submit Mentor Info" %>
+
   <% end %>
+
 </div>

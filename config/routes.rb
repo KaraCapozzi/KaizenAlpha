@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/profile', to: 'users#show'
-
   resources :users
 
   get '/login', to: 'sessions#new'
@@ -19,6 +18,11 @@ Rails.application.routes.draw do
   post '/newmentor', to: 'mentor_infos#create'
   get '/mentorprofile', to: 'mentor_infos#show'
 
+  resources :mentor_subcats
+
+
+  get '/addmentor', to: 'mentor_infos#new'
+  post '/addmentor', to: 'mentor_infos#create'
   resources :mentor_infos
 
 

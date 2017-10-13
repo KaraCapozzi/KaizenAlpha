@@ -1,2 +1,9 @@
 <h1>MentorSubcats#new</h1>
-<p>Find me in app/views/mentor_subcats/new.html.erb</p>
+<div class="">
+  <% @categories.each do |category| %>
+    <h3><%= category.name %></h3>
+    <% category.subcategories.each do |subcat| %>
+      <input type="checkbox" value="<%= subcat.name %>"/> <%= subcat.name %>
+    <% end %>
+  <% end %>
+</div>
