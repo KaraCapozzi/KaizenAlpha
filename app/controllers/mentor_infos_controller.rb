@@ -1,7 +1,10 @@
 class MentorInfosController < ApplicationController
+  def index
+    @mentor_infos = MentorInfo.all
+  end
 
   def show
-
+   @mentor_info
   end
 
   def new
@@ -9,7 +12,7 @@ class MentorInfosController < ApplicationController
   end
 
   def create
-    
+
   end
 
 end

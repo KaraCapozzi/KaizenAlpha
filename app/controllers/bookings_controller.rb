@@ -22,7 +22,7 @@ def index
 end
 
 def show
-
+  @booking = current_booking
 end
 
 def destroy

@@ -1,0 +1,16 @@
+<div >
+  <%= form_for :@booking do |f| %>
+
+   <%= f.label :booking_date %><br>
+   <%= f.text_field :booking_date, id: "date",type: "date" %>
+
+   <br>
+
+   <%= f.label :booking_time %><br>
+   <%= f.text_field :booking_time, id: "time", type:"time"%>
+   <br>
+
+    <%= f.submit "Book"%>
+
+  <% end %>
+  </div>
