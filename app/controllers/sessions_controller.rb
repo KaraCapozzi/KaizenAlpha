@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to user
+      if user.is_mentor
+        redirect_to newmentor_path
+      else
+        redirect_to user
+      end
+
     else
       render 'new'
     end

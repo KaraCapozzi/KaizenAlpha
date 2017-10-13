@@ -1,4 +1,4 @@
-k# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,7 +10,7 @@ k# This file is auto-generated from the current state of the database. Instead
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010212409) do
+ActiveRecord::Schema.define(version: 20171013013946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +32,17 @@ ActiveRecord::Schema.define(version: 20171010212409) do
   end
 
   create_table "mentor_infos", force: :cascade do |t|
-    t.integer "mentor_id"
+    t.integer "user_id"
     t.boolean "availability"
-    t.integer "sub_categories_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "summary"
+    t.string "location"
+  end
+
+  create_table "mentor_subcats", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,7 +61,7 @@ ActiveRecord::Schema.define(version: 20171010212409) do
     t.boolean "is_mentor"
     t.integer "phone"
     t.string "password_digest"
-    # t.string "remember_digest"
+    t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

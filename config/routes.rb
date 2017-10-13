@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'mentor_subcats/new'
+
   # root 'sessions#new'
   root 'categories#index'
   get 'sessions/new'
@@ -13,6 +15,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/newmentor', to: 'mentor_infos#new'
+  post '/newmentor', to: 'mentor_infos#create'
+  get '/mentorprofile', to: 'mentor_infos#show'
+
+  resources :mentor_infos
 
 
 

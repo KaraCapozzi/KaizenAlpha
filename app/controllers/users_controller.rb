@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   attr_accessor :name, :email
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to @user # ask why this is not working!!!!!!!
     else
       render 'new'

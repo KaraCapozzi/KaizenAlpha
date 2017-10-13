@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :mentor_info
-  has_many :sub_categories, through: :mentor_infos
+  has_one :mentor_info
+  has_many :subcategories
   has_secure_password
 end

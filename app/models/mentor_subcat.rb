@@ -1,0 +1,2 @@
+class MentorSubcat < ApplicationRecord
+end

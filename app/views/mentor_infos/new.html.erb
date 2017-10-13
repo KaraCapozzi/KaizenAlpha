@@ -1,0 +1,5 @@
+<div class="">
+  <% @subcategories.each do |subcat| %>
+    <input type="checkbox" value="<%= subcat.id %>"/> <%= subcat.name %>
+  <% end %>
+</div>
